@@ -491,27 +491,35 @@ height:100px ;
 }
 }
 
-.contact-info-upper-container {
-  display: flex;
+
+.contact-container{
+ display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+  text-align: center;
   justify-content: center;
-  border-radius: 2rem;
-  border: 1px solid #E5E7EB;
-  background-color: #ffffff;
-  margin: 2rem auto;
-  padding: 0.5rem;
 }
 
-.contact-info-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  margin: 1rem;
+
+.contact-info{
+width:300px;
+height:250px;
+  flex-direction: column;
+  padding: 1rem;
+  justify-items: center;
+  margin-top: 30px;
+  background-color:lightblue;
+  border-radius: 1rem;
+  border: 1px solid black;
+  text-align: left;
+  gap:2rem;
 }
 
-.contact-info-container p {
-  font-size: larger;
-}
+
+
+
+  
+
 
 .contact-icon,
 .email-icon {
