@@ -421,8 +421,8 @@ padding-bottom: 0px;
 }
 /* style.css */
 .project-box {
-    width: 300px; /* Set the width of the box */
-    height: 400px; /* Set the height of the box */
+    width: 200px; /* Set the width of the box */
+    height: 300px; /* Set the height of the box */
     background-color: lightblue; /* Set the background color */
     border: 2px solid black; /* Add a border */
     padding: 20px; /* Add space inside the box (between content and border) */
