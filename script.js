@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
      // Smooth scrolling for navigation links
+     
+     
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -10,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
         });
+
     });
      const currentYear = new Date().getFullYear();
     const copyrightElement = document.querySelector('footer p');
@@ -69,6 +72,11 @@ document.addEventListener('DOMContentLoaded', () => {
             behavior: 'smooth'
         });
     });
+  
+        const pbtn=document.getElementById(pongbtn);
+        pbtn.addEventListener(click ,function(){
+            alert("play game!");
+        });
 
 });
 
