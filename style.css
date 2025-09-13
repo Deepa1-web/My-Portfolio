@@ -405,6 +405,7 @@ padding-bottom: 0px;
     justify-content: center;
     gap: 10px;
     flex-wrap: wrap;
+    position: relative;
 }
 .project-box{
     position: relative;
@@ -418,6 +419,7 @@ padding-bottom: 0px;
     border-radius: 20px;
     box-shadow: var(--box-shadow);
     overflow: hidden;
+    
 }
 /* style.css */
 .project-box {
@@ -428,6 +430,7 @@ padding-bottom: 0px;
     padding: 20px; /* Add space inside the box (between content and border) */
     margin: 10px; /* Add space outside the box (between the box and other elements) */
     text-align: center; /* Align text within the box */
+    position: relative;
 }
 .project-box>i{
     font-size: 50px;
@@ -441,7 +444,7 @@ padding-bottom: 0px;
 }
 .project-box::after, .contact-info::after{
     content: "";
-    position: absolute;
+    position: relative;
     bottom: -100%;
     background: var(--black-color);
     width: 100%;
@@ -470,11 +473,10 @@ project-img{
   width: 100px;
 
 }
-
-.btn btn-color-3{
-width: 20px;
-height: 20px;
+.btn{
+  background-color:cyan;
 }
+
 /* CONTACT */
 
 .contact {
