@@ -37,7 +37,9 @@ let ball = {
 };
 
 let animationId;
-
+//score variables
+let playerScore = 0;
+let aiScore = 0;
 // Draw everything
 function draw() {
     // Clear
@@ -51,6 +53,11 @@ function draw() {
     ctx.lineTo(canvas.width/2, canvas.height);
     ctx.stroke();
     ctx.setLineDash([]);
+    //draw scores
+    ctx.fillStyle = 'black';
+    ctx.font = '48px Arial';
+    ctx.fillText(playerScore, canvas.width / 4, 50);
+    ctx.fillText(aiScore, 3 * canvas.width / 4, 50);
 
     // Player paddle
     ctx.fillStyle = '#54e1ff';
@@ -64,6 +71,9 @@ function draw() {
     ctx.fillStyle = '#fff';
     ctx.fillRect(ball.x, ball.y, ball.width, ball.height);
 }
+
+
+
 
 // Move paddles and ball
 function update() {
@@ -79,8 +89,17 @@ function update() {
         ball.y = canvas.height - ball.height;
         ball.dy *= -1;
     }
+//ball  out of bounds(left/right) 
+if(ball.x < 0){
+    aiScore++;
+    resetBall();
+}else if(ball.x > canvas.width){
+    playerScore++;
+    resetBall();
+}
+   
 
-    // Ball collision with player paddle
+// Ball collision with player paddle
     if (ball.x <= playerPaddle.x + playerPaddle.width &&
         ball.y + ball.height >= playerPaddle.y &&
         ball.y <= playerPaddle.y + playerPaddle.height) {
@@ -101,10 +120,7 @@ function update() {
         ball.dy = hitPoint * 0.25;
     }
 
-    // Ball out of bounds (left/right)
-    if (ball.x < 0 || ball.x > canvas.width) {
-        resetBall();
-    }
+   
 
     // AI Paddle movement (simple AI: track the ball)
     let target = ball.y + ball.height/2 - aiPaddle.height/2;
@@ -115,7 +131,9 @@ function update() {
     }
     // Clamp AI paddle
     aiPaddle.y = Math.max(0, Math.min(canvas.height - aiPaddle.height, aiPaddle.y));
+    
 }
+
 
 // Reset ball to center
 function resetBall() {
@@ -125,6 +143,7 @@ function resetBall() {
     ball.dx = BALL_SPEED * (Math.random() > 0.5 ? 1 : -1);
     ball.dy = BALL_SPEED * (Math.random() * 2 - 1);
 }
+
 
 // Mouse controls for player paddle
 canvas.addEventListener('mousemove', function(e) {
@@ -141,6 +160,6 @@ function gameLoop() {
     draw();
     animationId = requestAnimationFrame(gameLoop);
 }
-
+  
 // Start game
 gameLoop();
