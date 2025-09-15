@@ -9,7 +9,7 @@ const PADDLE_MARGIN = 25;
 const BALL_SIZE = 16;
 const BALL_SPEED = 8;
 const PLAYER_SPEED = 10;
-const AI_SPEED = 5;
+const AI_SPEED = 10;
 
 // Game state
 let playerPaddle = {
@@ -40,6 +40,7 @@ let animationId;
 //score variables
 let playerScore = 0;
 let aiScore = 0;
+const winningScore = 20;
 // Draw everything
 function draw() {
     // Clear
@@ -92,10 +93,19 @@ function update() {
 //ball  out of bounds(left/right) 
 if(ball.x < 0){
     aiScore++;
+    if(aiScore >= winningScore){
+        endGame('AI')
+    }else{
     resetBall();
+    }
 }else if(ball.x > canvas.width){
     playerScore++;
+    if(playerScore>=winningScore){
+        endGame('Player');
+    }
+    else{
     resetBall();
+    }
 }
    
 
@@ -153,13 +163,26 @@ canvas.addEventListener('mousemove', function(e) {
     // Clamp within canvas
     playerPaddle.y = Math.max(0, Math.min(canvas.height - playerPaddle.height, playerPaddle.y));
 });
+function endGame(winner){
+    cancelAnimationFrame(animationId);
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.fillStyle='#fff';
+    ctx.font='60px Arial';
+    ctx.textAlign='center';
+    ctx.fillText(`congratulations ${winner} wins!`,canvas.width/2,canvas.height/2);
+
+}
+
 
 // Main loop
 function gameLoop() {
+    if(playerScore<winningScore && aiScore < winningScore){
     update();
     draw();
     animationId = requestAnimationFrame(gameLoop);
+}else{
+    endGame(playerScore>=winningScore ? 'player':'AI');
 }
-  
+}
 // Start game
 gameLoop();
