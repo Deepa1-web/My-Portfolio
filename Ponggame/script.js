@@ -9,7 +9,7 @@ const PADDLE_MARGIN = 25;
 const BALL_SIZE = 16;
 const BALL_SPEED = 8;
 const PLAYER_SPEED = 10;
-const AI_SPEED = 10;
+const AI_SPEED = 4;
 
 // Game state
 let playerPaddle = {
@@ -186,3 +186,4 @@ function gameLoop() {
 }
 // Start game
 gameLoop();
+
