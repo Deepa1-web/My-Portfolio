@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
              if (!isValid) {
                 e.preventDefault(); // Stop form submission if invalid
             } else {  e.preventDefault();
-                alert('Thank you for your message! Your form has been submitted.');
+                alert('an error occured.');
                 contactForm.reset(); // Clear the form
             }
         });
