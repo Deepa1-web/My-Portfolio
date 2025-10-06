@@ -12,9 +12,17 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #E8E6E1;
-  color: #111827;
+  background: lightgray;
+  color: black;
+  /* It's better to define these as variables for easier management */
+
+  zoom: reset;
 }
+
+
+
+/* SECTIONS */
+
 
 html {
   scroll-behavior: smooth;
@@ -24,12 +32,9 @@ p {
   color: #000000;
 }
 
-/* TRANSITION */
 
-a,
-.btn {
-  transition: all 300ms ease;
-}
+
+
 
 /* HEADER NAVIGATION */
 
@@ -41,12 +46,13 @@ nav {
   padding: 0 4rem;
 }
 .nav-name{
-   border: 2px solid black; 
+   
   padding:10px;          
-   font-size: 25px;    
-  background-color: yellow;  
-  width: 120px;
-  height: 50px;
+   font-size: 40px;    
+  font-family: cursive;
+ 
+ 
+ 
 }
 nav .logo {
   font-size: 2rem;
@@ -145,8 +151,6 @@ nav .nav-links a:hover {
 }
 
 /* SECTIONS */
-
-
 section {
   padding-top: 0px;
   height: 60vh;
@@ -203,7 +207,7 @@ section {
     align-items: left; 
     justify-content: space-between;
     padding: 0px;
-    
+   
 
       margin-bottom: 0;
 padding-bottom: 0;       
@@ -213,18 +217,22 @@ padding-bottom: 0;
     flex:1;
     max-width: 50%;
     padding-right: 40px;
+  
 
   }
-
+.hero-content p{
+  margin-bottom: 1rem;
+  text-align: left;
+}
 .hero-image  {
-  width:200px;
-  height: 200px;
+  width:250px;
+  height: 250px;
   flex-shrink: 0;
   margin-left: auto;
   float: left;
   padding-right: 10px;
   border-radius: 50%;
-  
+  margin-right: 70px;
  
    
 }
@@ -240,95 +248,112 @@ border-radius: 50%;
 
 /* BUTTONS */
 
-.btn-container {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
- 
-}
 
-.btn {
-  font-weight: 600;
-  transition: all 300ms ease;
-  padding: 1rem;
-  width: 9rem;
-  border-radius: 5rem;
-}
 
-.btn btn-color-1{
-  background-color: blue;
-  color:white
-}
 .btn-color-2 {
   background-color: blue;
-  color:white
-  
+  color:white;
+border: black 2px solid;
+ height: 50px;
+ width: 100px;
+margin-top: 15px;
+margin-bottom: 15px;
+gap: 0.5rem;
+  transition: background-color 0.3s ease;
+
+}
+.btn-cv{
+  background-color: blue;
+  color:white;
+border: black 2px solid;
+ height: 50px;
+ width: 150px;
+ margin-top: 15px;
+ margin-left: 15px;
+ margin-bottom: 15px;
+ gap: 0.5rem;
+  transition: background-color 0.3s ease;
 }
 
-.btn-container {
-  gap: 5rem;
-}
 
 .social-links a{
+  margin-top: 20px;
   font-size: 20px;
   margin-right: 10px;
   place-self: center;
 gap: 15px;
+align-items: center;
   transition: color 0.1s ease;
 
 }
-.social-links a:hover {
-    color: #0077b5; 
-    margin-bottom: 20px;
-    
-}
+
 /*about*/
 .about{
   margin-top: 0;
   padding-top: 0;
   padding: 0rem;
-  text-align: center;
+flex-direction: column;
+  
 }
-.top-header{
-  text-align: center;
+.top-header1{
+  display: flex;
+place-self:center;
+  
+  margin-left: 150px;
+  margin-bottom: 30px;
 }
 .about-container{
   display: flex;
-  justify-content: center;
-width:800px;
-height:200px;
+
+gap:3rem;
+ margin-right: 0px;
+  text-align: left;
+  
+}
+.about-box{
+ 
   flex-direction: column;
-  padding: 0.5rem;
-  justify-items: center;
-  background-color:violet;
+width:500px;
+height:650px;
+ margin-top: 40px;
   border-radius: 1rem;
-  border: 1px solid black;
+  border: 2px solid black;
+padding-left: 10px;
+  margin-bottom: 50px;
+}
+.intro{
   text-align: center;
-  gap:2rem;
-  place-self: center;
-  margin-top: auto;
+  
 }
 .about-text{
 
-  text-align: left;
-  padding: 1rem;
+  text-align: justify;
+  
+ 
+
+  
+}
+
+.abt-journey{
+  
+text-align: justify;
+padding : 10px; 
+ 
 }
 /* SKILL SECTION */
-.skills{
-  padding: 0px;
 
-}
 .top-header{
   text-align: center;
+  margin-bottom: 30px;
 }
 /* ----- ABOUT / SKILLS BOX ----- */
 .skills-container{
   display: flex;
-    width: 100%;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    text-align: center;
+  
+
+    gap: 2rem;
+  
+    text-align: left;
 }
 
 .skills-box{
@@ -340,29 +365,30 @@ height:200px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 30%;
-    height: 250px;
+   flex-wrap: wrap;
     background: var(--background-color);
     border-radius: 20px;
     box-shadow: var(--box-shadow);
     overflow: hidden;
+    gap: 15px;
     }
 .skill-box {
-    width: 250px; /* Set the width of the box */
-    height: 250px; /* Set the height of the box */
-    background-color: violet; /* Set the background color */
+    width: 600px; /* Set the width of the box */
+    height: 400px; /* Set the height of the box */
+   /* Set the background color */
     border: 2px solid black; /* Add a border */
     padding: 10px; /* Add space inside the box (between content and border) */
-    margin: 10px; /* Add space outside the box (between the box and other elements) */
+   /* Add space outside the box (between the box and other elements) */
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+
+   
+ 
+    margin-bottom: 50px;
 }
 .skill-box>i{
     font-size: 50px;
     color: var(--black-color);
-    margin-bottom: 25px;
+    margin-bottom: 40px;
 }
 .skill-box label{
     font-size: 20px;
@@ -393,60 +419,109 @@ height:200px;
     z-index: 2;
 }
 .Skills{
-  text-align: center;
+  text-align: left;
 }
 /* PROJECTS SECTION */
 
 /* ----- PROJECTS BOX ----- */
-.projects{
-  padding-top: 0px;
-padding-bottom: 0px;
-}
+
 .top-header{
   text-align: center;
+  
 }
-.Projects{
-  text-align: center;
-}
+
 .project-container{
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    text-align: center;
-    position: relative;
+display: flex;
+ gap: 2rem;
+ 
+  text-align: left;
+ 
+
 }
 .project-box{
     position: relative;
     display: flex;
-    justify-content: center;
+
     align-items: center;
     text-align: center;
     flex-direction: column;
-    width: 30%;
-    height: 300px;
-    background: var(--background-color);
-    border-radius: 20px;
-    box-shadow: var(--box-shadow);
-    overflow: hidden;
+ 
+
+        width: 500px; /* Set the width of the box */
+    height: 500px; /* Set the height of the box */
+   
+  /* Add a border */
+    /* Add space inside the box (2between content and border) */
+    margin-top: 10px; /* Add space outside the box (between the box and other elements) */
+   /* Align text within the box */
+ 
+    border: #000000 2px solid;
+      margin-bottom: 35px;
+      background-color: gray;
+   
     
 }
-/* style.css */
-.project-box {
-    width: 250px; /* Set the width of the box */
-    height: 300px; /* Set the height of the box */
-    background-color: lightgray; /* Set the background color */
-    border: 2px solid black; /* Add a border */
-    padding: 20px; /* Add space inside the box (between content and border) */
-    margin: 10px; /* Add space outside the box (between the box and other elements) */
-    text-align: center; /* Align text within the box */
-    position: relative;
+
+
+.project-1img {
+  width: 100%;
+  height: 350px;
+  border-bottom: #000000 1px solid;
+ 
 }
+.btn-pong{
+  background-color: blue;
+  color:white;
+border: black 2px solid;
+margin-top: 10px;
+width: 150px;
+ height: 400px;
+ padding: 10px;
+ margin-bottom: 40px;
+
+}
+.project-2img {
+  
+   width: 100%;
+  height: 350px;
+  border-bottom: #000000 1px solid;
+ 
+}
+.btn-port1{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: blue;
+  color:white;
+  width: 120px;
+  height: 50px;
+  margin-top: 40px;
+margin-bottom: 20px;
+padding:10px
+
+  
+
+  
+
+}
+.btn-port2{
+  padding-top: 20px;
+  background-color: blue;
+  color:white;
+  width: 150px;
+  height: 50px;
+  margin-top: 40px;
+margin-bottom: 20px;
+padding-bottom: 20px;
+
+padding: 10px;
+gap:2rem;
+}
+
 .project-box>i{
     font-size: 50px;
     color: var(--black-color);
-    margin-bottom: 25px;
+  
+        text-align: center  ;
     text-align: center  ;
 
 } 
@@ -485,32 +560,27 @@ padding-bottom: 0px;
 }
 
 
-project-img{
-  height: 100px;
-  width: 100px;
-
-}
 
 
 /* CONTACT */
 
 .contact {
   display: flex;
-  justify-content:left;
+  
   flex-direction: column;
   height: 70vh;
   text-align: center ;
-  padding: auto;
+
 input[type="text"],
 input[type="email"]
 {
-  width:200px;
+  width:350px;
   height:40px;
-  text-align: center;
+ 
  
 }
 textarea{
-width: 200px;
+width: 350px;
 height:100px ;
  text-align: center;
 
@@ -521,30 +591,39 @@ height:100px ;
 .contact-container{
  display: flex;
   gap: 3rem;
-  flex-wrap: wrap;
-  text-align: center;
-  justify-content: center;
+ 
+  text-align: left;
+
+  
 }
 
 
 .contact-info{
-width:420px;
-height:320px;
+width:500px;
+height:400px;
   flex-direction: column;
-  padding: 1rem;
+  padding: 10px;
   justify-items: center;
-  margin-top: 30px;
-  background-color:lightgray;
+ border: black 2px solid;
   border-radius: 1rem;
-  border: 1px solid black;
+ margin-top: 20px;
   text-align: center;
-  gap:2rem;
-  place-self: center;
+  gap:20px;
+ 
 }
 
 
 
-
+.form{
+  width: 400px;
+  height: 400px;
+ text-emphasis: center;
+ align-items: center;
+  margin-top: 20px;
+  border: #000000 2px solid;
+  gap:0.5rem;
+  text-align: center;
+}
   
 
 
@@ -555,7 +634,7 @@ height:320px;
 
 /*submit button*/
 .btn-submit{
-  width: 80px;
+  width: 100px;
   height: 40px;
   color: white;
   background-color: blue;
@@ -564,32 +643,51 @@ height:320px;
 
 /* FOOTER */
 
-footer {
-  text-align: center;
-  margin-top: 30px;
+
+/* Style the parent container */
+.footer-links {
+  background-color: violet;
+  display: flex; /* Makes the children flex items, positioning them horizontally */
+  justify-content: space-around; /* Distributes space evenly between and around the items */
+  border-top: 1px solid black;
+  margin-top: 50px;
+  border-bottom: #000000 1px solid;
+  gap: 4rem;
+  margin-right: auto;
+  padding-left: 200px;
 }
 
-footer .nav-links {
-  display: inline-block;
+/* Style the child columns */
+.footer-columns {
+  /* This is optional, but helps with spacing and layout */
+  flex: 1; /* Allows the columns to grow and shrink, taking up equal space */
+  padding-left:  20px; /* Adds some internal padding for better spacing */
 }
 
-footer .nav-links a {
-  display: inline-block;
-  margin: 0 15px;
-  text-decoration: none;
-  color: #3B82F6;
-  font-weight: 500;
-  font-size: 1.5rem;
+/* Optional: Additional styling for the lists */
+.link-list,
+.contact-list {
+  list-style: none; /* Removes the default bullet points */
+  padding:10px; /* Removes default padding */
 }
 
-footer .nav-links a:hover {
-  text-decoration: underline;
-  text-underline-offset: 4px;
+.contact-list li {
+  display: flex; /* Aligns the icon and link horizontally */
+  align-items: left; /* Vertically aligns the icon and text */
+}
+
+.contact-list li i {
+  margin-right: 10px; /* Adds space between the icon and the link text */
+}
+
 
   
-}
-footer p {
+ 
+  
+
+ p {
   margin-top: 10px;
   color: black;
   font-size: 1.2rem;
+  text-align: center;
 }
