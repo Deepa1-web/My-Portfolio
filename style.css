@@ -306,7 +306,7 @@ place-self:center;
 .about-container{
   display: flex;
 
-gap:3rem;
+gap:1rem;
  margin-right: 0px;
   text-align: left;
   
@@ -329,7 +329,7 @@ padding-left: 10px;
 .about-text{
 
   text-align: justify;
-  
+  text-align:center;
  
 
   
