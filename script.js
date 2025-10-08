@@ -17,13 +17,13 @@ document.addEventListener('DOMContentL  oaded', () => {
 
 
 
-    const contactForm = document.querySelector('.contact form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+    const contact-Form = document.querySelector('.contact form');
+    if (contact-Form) {
+        contact-Form.addEventListener('submit', function(e) {
             let isValid = true;
-             const nameInput = contactForm.querySelector('input[type="text"][placeholder=" Name"]');
-            const emailInput = contactForm.querySelector('input[type="email"]');
-            const messageInput = contactForm.querySelector('textarea');
+             const nameInput = contact-Form.querySelector('input[type="text"][placeholder=" Name"]');
+            const emailInput = contact-Form.querySelector('input[type="email"]');
+            const messageInput = contact-Form.querySelector('textarea');
  // Simple validation checks
             if (nameInput.value.trim() === '') {
                 alert('Please enter your name.');
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentL  oaded', () => {
                 e.preventDefault(); // Stop form submission if invalid
             } else {  e.preventDefault();
                 alert('an error occured.');
-                contactForm.reset(); // Clear the form
+                contact-Form.reset(); // Clear the form
             }
         });
     }
