@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 e.preventDefault(); // Stop form submission if invalid
             } else { 
                  e.preventDefault();
-                alert('form submitted successfully.');
+                alert('an error occured!');
             
                 contactForm.reset(); // Clear the form
             }
@@ -91,4 +91,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
      
 });
+
 
