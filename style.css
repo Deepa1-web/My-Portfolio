@@ -345,7 +345,7 @@ display: grid;
 
 .skill-bar {
     height: 8px; /* Slightly thinner bar */
-    background: var(--background-bar-color);
+    background: whitesmoke;
     border-radius: 4px;
     overflow: hidden;
     position: relative;
@@ -355,7 +355,7 @@ display: grid;
 .skill-progress {
     height: 100%;
     /* Use a solid color or gradient similar to the image's purple */
-   background-color:  #6a1b9a;
+   background-color:  violet;
    border-radius: var(--border-radius-sm);
    overflow: hidden;
    position: relative;
@@ -702,3 +702,4 @@ text-align: center;
   font-size: 1.2rem;
   text-align: center;
 }
+
